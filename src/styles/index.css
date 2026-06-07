@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: 'Raleway', sans-serif;
+    --font-display: 'Titillium Web', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased bg-white text-corcov-slate font-sans selection:bg-corcov-sky/20 selection:text-corcov-charcoal;
+  }
+
+  p {
+    @apply text-base md:text-[19px] leading-relaxed mb-4 text-corcov-slate;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-corcov-charcoal font-normal;
+  }
+
+  h1 {
+    @apply text-4xl md:text-[80px] leading-tight tracking-tight;
+  }
+
+  h2 {
+    @apply text-3xl md:text-[48px] leading-tight tracking-tight;
+  }
+
+  h3 {
+    @apply text-2xl md:text-[32px] leading-snug;
+  }
+
+  h4 {
+    @apply text-xl md:text-[24px] leading-snug;
+  }
+
+  h5 {
+    @apply text-lg md:text-[18px] leading-normal;
+  }
+
+  h6 {
+    @apply text-sm md:text-[14px] leading-normal;
+  }
+}
+
+@layer utilities {
+  /* Tech Grid Backdrop Pattern */
+  .tech-grid {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(47, 193, 255, 0.015) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(47, 193, 255, 0.015) 1px, transparent 1px);
+  }
+
+  /* Custom Smooth Scrollbar for Corporate UI */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-slate-200 rounded-full hover:bg-slate-300 transition-colors;
+  }
+
+  /* Text Gradients */
+  .text-gradient-tech {
+    @apply bg-gradient-to-r from-corcov-charcoal via-slate-800 to-[#4B4F58] bg-clip-text text-transparent;
+  }
+}
